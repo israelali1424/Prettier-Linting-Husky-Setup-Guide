@@ -1,10 +1,24 @@
 # Prettier-Linting-Husky-Setup-Guide
 
 This readme File will be a step-by-step setup guide for ESLint with Pettier and Husky for Typescript React
+Before Every Commit run the below command
+To run linitng and check for errors
+`
+npm run lint
+`
+If there are any errors most can be fixed automatically by running 
+`
+npm run lint:fix 
+`
+In this tutorial Prettier will be ran automatically on when changes to a file is saved. But if you would like to run Prettier in the Cli use the command below
+Be aware that this command is not one size fits all and you might need to change the path of the files Prettier is writing to depending on the file structure of your project 
 
+`
+prettier --write "./src/*.{ts,tsx,js,jsx}
+`
 # Step 1 Setting Up ESLint
 
-1. Open the terminal in vscode and cd into the folder of your react-app
+1. Open the terminal in vscode and cd into the folder of your react-app Example below 
    `cd my-app`
 2. Enter the below command in ther termianal to initalize eslint
    `npm init @eslint/config`
@@ -65,6 +79,7 @@ For the rest of the questions pick the answers show in the photo below
     "rules": {
     }
 }
+### Imporant note make sure you are using the right file path for ./tsconfig.json because ESLint will throw errors if the path is wrong. SO edit the file path if necesary
 `
 4. With in your package.json 
 `
@@ -78,7 +93,61 @@ scripts": {
   },
 `
 
+# Install Prettier and save as a dev dependency
+Makes eslint know that prettier is in the project and works with ot
+`
+npm install prettier eslint-config-prettier eslint-plugin-prettier --save-dev
+npm install --save-dev --save-exact prettier
+`
+If you try to run Prettier in the command line and it does not work. Install it Globally with npm and it should work then
+ `
+ npm install -g prettier
+ `
+### Add Prettier to .eslint.json : Updated part of the file below.
+ Make sure to always have Prettier as the last plugin in the array so it's rules can override all others before it. 
+ `
+   "extends": [
+        "react-app",
+        "react-app/jest",
+        "airbnb",
+        "airbnb-typescript",
+        "airbnb/hooks",
+        "plugin:import/typescript",
+        "plugin:prettier/recommended"
+    ],
+    "overrides": [
+    ],
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "ecmaVersion": "latest",
+        "sourceType": "module",
+        "project": "./tsconfig.json"
+    },
+    "plugins": [
+        "react",
+        "@typescript-eslint",
+        "prettier"
+    ],
+ `
+ # Make sure to create the Prettier configuration and have it in the root directory of your project  
+ Filename .prettierrc 
+`
+{   "semi": true,    
+    "tabWidth": 2,    
+    "useTabs": false,     
+    "singleQuote": true,      
+    "bracketSpacing": true,     
+    "printWidth": 100,     
+    "htmlWhitespaceSensitivity": "ignore"  
+}
+`
+Filename .prettierignore
+ignore what you would like
+Finally install the Prettier extension in vs code and changes the Format Setting to have Prettier as the default formatter and formats on save
 
+![AddPRETTEIR](my-app/SetupPhotos/PrettierFommatSetting.png)
+
+# Important NOTES 
 # Acknowledges
 
 This setup uses the Airbnb code style guide

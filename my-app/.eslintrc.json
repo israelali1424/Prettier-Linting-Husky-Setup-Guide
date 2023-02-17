@@ -10,7 +10,8 @@
         "airbnb",
         "airbnb-typescript",
         "airbnb/hooks",
-        "plugin:import/typescript"
+        "plugin:import/typescript",
+        "plugin:prettier/recommended"
     ],
     "overrides": [
     ],
@@ -18,11 +19,12 @@
     "parserOptions": {
         "ecmaVersion": "latest",
         "sourceType": "module",
-        "project": "./tsconfig.json"
+        "project": "my-app/tsconfig.json"
     },
     "plugins": [
         "react",
-        "@typescript-eslint"
+        "@typescript-eslint",
+        "prettier"
     ],
     "rules": {
     }
