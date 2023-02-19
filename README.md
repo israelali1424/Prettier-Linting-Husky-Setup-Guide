@@ -1,7 +1,7 @@
 # Prettier-Linting-Husky-Setup-Guide
 
 This readme File will be a step-by-step setup guide for ESLint with Pettier and Husky for Typescript React
-Before Every Commit run the below command
+Before Every Commit run the below command. This for the frontend only for backned with Node.js and TypeScript checkout SERVER-README.md in the server folder
 To run linitng and check for errors
 `
 npm run lint
@@ -147,8 +147,13 @@ Finally install the Prettier extension in vs code and changes the Format Setting
 
 ![AddPRETTEIR](my-app/SetupPhotos/PrettierFommatSetting.png)
 
+# Adding eslint for the Poject
+npm install eslint eslint-config-prettier eslint-plugin-prettier @typescript-eslint/eslint-plugin @typescript-eslint/parser
+
 # Important NOTES 
 # Acknowledges
 
 This setup uses the Airbnb code style guide
-This setup guide follows and documments the steps of setting ESLint with Pettier and Husky for Typescript React from Youtuber CoderOne's video [ESLint with VSCode, Prettier, Husky and React For Beginners](https://www.youtube.com/watch?v=ZXW6Jn6or1w)
+This setup guide follows and documments the steps of setting ESLint with Pettier and Husky for Typescript React from Youtuber CoderOne's video [ESLint with VSCode, Prettier, Husky and React For Beginners](https://www.youtube.com/watch?v=ZXW6Jn6or1w) and Colt Steele ![
+How To Use TypeScript With Express & Node](https://www.youtube.com/watch?v=qy8PxD3alWw) 
+
