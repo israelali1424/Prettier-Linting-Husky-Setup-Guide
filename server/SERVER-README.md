@@ -71,7 +71,7 @@ concurrently package will allows us to run mutiple scripts at once. Install as d
 This setup guide was create using a combination of the youtube videos [How to Setup Node.js with TypeScript in 2023]
 (https://www.youtube.com/watch?v=H91aqUHn8sE) 
 by Beyond Fireship and 
-[How To Use TypeScript With Express & Node](https://www.youtube.com/watch?v=qy8PxD3alWw) by PedroTech
+Colt Steele ![How To Use TypeScript With Express & Node](https://www.youtube.com/watch?v=qy8PxD3alWw) 
 
 FireShip Link for their tutorial 
 https://fireship.io/lessons/typescript-nodejs-setup/ 

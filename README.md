@@ -16,13 +16,21 @@ Be aware that this command is not one size fits all and you might need to change
 `
 prettier --write "./src/*.{ts,tsx,js,jsx}
 `
+`
+npm run prettier
+` can also be used to run prettier 
 # Step 1 Setting Up ESLint
 
 1. Open the terminal in vscode and cd into the folder of your react-app Example below 
    `cd my-app`
-2. Enter the below command in ther termianal to initalize eslint
+2. Create a react app using typecript
+    `
+    npx create-react-app my-app --template typescript
+    `
+3. Enter the below command in ther termianal to initalize eslint
    `npm init @eslint/config`
    `
+
    When asked How would you like to use ESLint Select
 
 - To chek syntax and find problems
@@ -50,7 +58,8 @@ For the rest of the questions pick the answers show in the photo below
             --save-dev`
 3. Configure ESLlint, Within your ESLint config file(.eslintrc.json):
    eslint-config-airbnb/hooks for react
-   `{
+   `
+   {
     "env": {
         "browser": true,
         "es2021": true,
@@ -79,8 +88,9 @@ For the rest of the questions pick the answers show in the photo below
     "rules": {
     }
 }
-### Imporant note make sure you are using the right file path for ./tsconfig.json because ESLint will throw errors if the path is wrong. SO edit the file path if necesary
 `
+### Imporant note make sure you are using the right file path for ./tsconfig.json because ESLint will throw errors if the path is wrong. SO edit the file path if necesary
+
 4. With in your package.json 
 `
 scripts": {
@@ -97,6 +107,8 @@ scripts": {
 Makes eslint know that prettier is in the project and works with ot
 `
 npm install prettier eslint-config-prettier eslint-plugin-prettier --save-dev
+`
+`
 npm install --save-dev --save-exact prettier
 `
 If you try to run Prettier in the command line and it does not work. Install it Globally with npm and it should work then
@@ -147,13 +159,9 @@ Finally install the Prettier extension in vs code and changes the Format Setting
 
 ![AddPRETTEIR](my-app/SetupPhotos/PrettierFommatSetting.png)
 
-# Adding eslint for the Poject
-npm install eslint eslint-config-prettier eslint-plugin-prettier @typescript-eslint/eslint-plugin @typescript-eslint/parser
-
 # Important NOTES 
 # Acknowledges
 
 This setup uses the Airbnb code style guide
-This setup guide follows and documments the steps of setting ESLint with Pettier and Husky for Typescript React from Youtuber CoderOne's video [ESLint with VSCode, Prettier, Husky and React For Beginners](https://www.youtube.com/watch?v=ZXW6Jn6or1w) and Colt Steele ![
-How To Use TypeScript With Express & Node](https://www.youtube.com/watch?v=qy8PxD3alWw) 
+This setup guide follows and documments the steps of setting ESLint with Pettier and Husky for Typescript React from Youtuber CoderOne's video [ESLint with VSCode, Prettier, Husky and React For Beginners](https://www.youtube.com/watch?v=ZXW6Jn6or1w) 
 
