@@ -30,6 +30,13 @@ Use the NodeNext option to handle ES Modules with interop between CommonJS modul
     "include": ["src/**/*"],
   }
  `
+ ### Create an src forlder and place an index.ts file in that folder
+
+ `mkdir src `
+ `cd src `
+ `touch index.ts`
+ 
+ 
 
 ## Setting Running Server and restart, cleaning and updating the server when a change is made
 
@@ -40,7 +47,7 @@ Use the NodeNext option to handle ES Modules with interop between CommonJS modul
 
 #### rimraf npm package Will clear out the dist folder when we re build the server. This will get rid of any old and or unused files in that folder.
 
-` npm install rimraf
+` npm install --save-dev rimraf
 `
 
 ##### Install rimraf Globally so the command will work in the terminal
@@ -56,7 +63,7 @@ concurrently package will allows us to run mutiple scripts at once. Install as d
 `npm install -g concurrently`
 
 ####Add this below to your package.json so only the `npm run serve` will be needed to start the server and watch for all changes
-
+The before start the server for the first time run an npm run build to create the dist folder need to convert ts to js
 ` "scripts": {
     "build": "rimraf dist && npx tsc",
     "prestart": "npm run build",
