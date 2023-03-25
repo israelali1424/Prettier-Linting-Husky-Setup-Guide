@@ -1,4 +1,5 @@
 #Setup
+### Warning  this current setup does not work do not folllow for now 
 Package.json Module Type
 `npm init -y`
 `npm install -D typescript @types/node`
